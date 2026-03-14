@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://hdppfpc3a2se"]
+
+[ext_resource type="Script" uid="uid://cauqdds3cm4pe" path="res://scenes/props/melon.gd" id="1_a445i"]
+[ext_resource type="Texture2D" uid="uid://p37fp4icsuqn" path="res://assets/melon.png" id="1_kg8im"]
+[ext_resource type="PackedScene" uid="uid://bt1d07jlem8e0" path="res://scenes/colliders/damage_receiver.tscn" id="3_obe55"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_axiri"]
+radius = 3.0
+height = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lv03l"]
+size = Vector2(13, 13)
+
+[node name="Melon" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_a445i")
+knockback_intensity = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kg8im")
+centered = false
+offset = Vector2(-16, -32)
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_axiri")
+
+[node name="DamageReceiver" parent="." instance=ExtResource("3_obe55")]
+collision_layer = 64
+
+[node name="CollisionShape2D" parent="DamageReceiver" index="0"]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_lv03l")
+
+[editable path="DamageReceiver"]

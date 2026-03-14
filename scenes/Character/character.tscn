@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmk5bto6umi8b"]
+
+[ext_resource type="Script" uid="uid://c7w5t0iqpe5no" path="res://scenes/Character/character.gd" id="1_oakiv"]
+[ext_resource type="Texture2D" uid="uid://dth4xtbgiefcd" path="res://assets/shadow.png" id="2_yenhn"]
+[ext_resource type="PackedScene" uid="uid://dfrab8tqy1rao" path="res://scenes/colliders/damage_emitter.tscn" id="3_fqfur"]
+[ext_resource type="PackedScene" uid="uid://bt1d07jlem8e0" path="res://scenes/colliders/damage_receiver.tscn" id="4_fsvua"]
+
+[node name="Character" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_oakiv")
+type = 2
+damage = 10
+speed = 5.0
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_yenhn")
+
+[node name="CharacterSprite" type="Sprite2D" parent="."]
+hframes = 10
+vframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="DamageEmitter" parent="." instance=ExtResource("3_fqfur")]
+
+[node name="DamageReceiver" parent="." instance=ExtResource("4_fsvua")]
+
+[node name="CollateralDamageEmitter" parent="." instance=ExtResource("3_fqfur")]
+
+[node name="ProjectileAim" type="RayCast2D" parent="."]
+target_position = Vector2(100, 0)
+collision_mask = 0
+
+[node name="CollectibleSensor" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectibleSensor"]
+
+[editable path="DamageEmitter"]
+[editable path="DamageReceiver"]
+[editable path="CollateralDamageEmitter"]

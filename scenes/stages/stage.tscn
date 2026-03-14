@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkxlmljatlqux"]
+
+[ext_resource type="Script" uid="uid://d3kuem5i7u0i7" path="res://scenes/stages/stage.gd" id="1_iinn4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iinn4"]
+size = Vector2(793.5, 29)
+
+[node name="Stage" type="Node2D"]
+script = ExtResource("1_iinn4")
+music = 2
+
+[node name="Backgrounds" type="Node2D" parent="."]
+
+[node name="MainBackground" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(-0.99998474, -411.99997)
+scale = Vector2(0.783, 0.8624678)
+centered = false
+
+[node name="WorldColliders" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WorldColliders"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldColliders/StaticBody2D"]
+position = Vector2(388.5, 0)
+shape = SubResource("RectangleShape2D_iinn4")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="WorldColliders"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldColliders/StaticBody2D2"]
+position = Vector2(389, 74)
+shape = SubResource("RectangleShape2D_iinn4")
+
+[node name="Checkpoints" type="Node2D" parent="."]

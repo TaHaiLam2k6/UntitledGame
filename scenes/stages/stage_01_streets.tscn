@@ -1,0 +1,137 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm0f6btgshdbx"]
+
+[ext_resource type="PackedScene" uid="uid://dkxlmljatlqux" path="res://scenes/stages/stage.tscn" id="1_vnnc8"]
+[ext_resource type="Texture2D" uid="uid://du8mrl7mhlucr" path="res://assets/FARAWAY_PARK.webp" id="2_fa25f"]
+[ext_resource type="PackedScene" uid="uid://bekejdsxi4gjv" path="res://scenes/stages/checkpoint.tscn" id="3_ani88"]
+[ext_resource type="PackedScene" uid="uid://cpg0t1qebyund" path="res://scenes/Character/basic_enemy.tscn" id="4_4fdwm"]
+[ext_resource type="PackedScene" uid="uid://hdppfpc3a2se" path="res://scenes/props/melon.tscn" id="5_4fdwm"]
+[ext_resource type="PackedScene" uid="uid://ce64xpftw4brr" path="res://scenes/Character/igor_boss.tscn" id="5_c8tl5"]
+
+[node name="Stage-01-Streets" instance=ExtResource("1_vnnc8")]
+
+[node name="MainBackground" parent="Backgrounds" index="0"]
+position = Vector2(-8.000001, -426.99997)
+texture = ExtResource("2_fa25f")
+
+[node name="Checkpoint" parent="Checkpoints" index="0" instance=ExtResource("3_ani88")]
+position = Vector2(138, -3)
+
+[node name="BasicEnemy" parent="Checkpoints/Checkpoint/Enemies" index="0" instance=ExtResource("4_4fdwm")]
+position = Vector2(140, 39)
+
+[node name="BasicEnemy2" parent="Checkpoints/Checkpoint/Enemies" index="1" instance=ExtResource("4_4fdwm")]
+position = Vector2(267, 50)
+
+[node name="BasicEnemy4" parent="Checkpoints/Checkpoint/Enemies" index="2" instance=ExtResource("4_4fdwm")]
+position = Vector2(129, 50)
+
+[node name="BasicEnemy5" parent="Checkpoints/Checkpoint/Enemies" index="3" instance=ExtResource("4_4fdwm")]
+position = Vector2(280, 43)
+
+[node name="BasicEnemy3" parent="Checkpoints/Checkpoint/Enemies" index="4" instance=ExtResource("4_4fdwm")]
+position = Vector2(187, -7)
+
+[node name="BasicEnemy6" parent="Checkpoints/Checkpoint/Enemies" index="5" instance=ExtResource("4_4fdwm")]
+position = Vector2(210, -7)
+
+[node name="CollisionShape2D" parent="Checkpoints/Checkpoint/PlayerDectionArea" index="0"]
+position = Vector2(201, 32)
+
+[node name="CollisionShape2D" parent="Checkpoints/Checkpoint/CheckpointPlayerArea" index="0"]
+position = Vector2(201, 32)
+
+[node name="Checkpoint2" parent="Checkpoints" index="1" instance=ExtResource("3_ani88")]
+position = Vector2(0, -2)
+
+[node name="BasicEnemy" parent="Checkpoints/Checkpoint2/Enemies" index="0" instance=ExtResource("4_4fdwm")]
+position = Vector2(277, 39)
+
+[node name="BasicEnemy2" parent="Checkpoints/Checkpoint2/Enemies" index="1" instance=ExtResource("4_4fdwm")]
+position = Vector2(267, 50)
+
+[node name="BasicEnemy3" parent="Checkpoints/Checkpoint2/Enemies" index="2" instance=ExtResource("4_4fdwm")]
+position = Vector2(257, 66)
+
+[node name="CollisionShape2D" parent="Checkpoints/Checkpoint2/PlayerDectionArea" index="0"]
+position = Vector2(201, 32)
+
+[node name="CollisionShape2D" parent="Checkpoints/Checkpoint2/CheckpointPlayerArea" index="0"]
+position = Vector2(201, 32)
+
+[node name="Checkpoint3" parent="Checkpoints" index="2" instance=ExtResource("3_ani88")]
+position = Vector2(277, -3)
+
+[node name="BasicEnemy" parent="Checkpoints/Checkpoint3/Enemies" index="0" instance=ExtResource("4_4fdwm")]
+position = Vector2(140, 39)
+
+[node name="BasicEnemy2" parent="Checkpoints/Checkpoint3/Enemies" index="1" instance=ExtResource("4_4fdwm")]
+position = Vector2(267, 50)
+
+[node name="BasicEnemy4" parent="Checkpoints/Checkpoint3/Enemies" index="2" instance=ExtResource("4_4fdwm")]
+position = Vector2(129, 50)
+
+[node name="BasicEnemy5" parent="Checkpoints/Checkpoint3/Enemies" index="3" instance=ExtResource("4_4fdwm")]
+position = Vector2(280, 43)
+
+[node name="BasicEnemy3" parent="Checkpoints/Checkpoint3/Enemies" index="4" instance=ExtResource("4_4fdwm")]
+position = Vector2(187, -7)
+
+[node name="BasicEnemy6" parent="Checkpoints/Checkpoint3/Enemies" index="5" instance=ExtResource("4_4fdwm")]
+position = Vector2(210, -7)
+
+[node name="BasicEnemy7" parent="Checkpoints/Checkpoint3/Enemies" index="6" instance=ExtResource("4_4fdwm")]
+position = Vector2(184, 68)
+
+[node name="BasicEnemy8" parent="Checkpoints/Checkpoint3/Enemies" index="7" instance=ExtResource("4_4fdwm")]
+position = Vector2(215, 65)
+
+[node name="CollisionShape2D" parent="Checkpoints/Checkpoint3/PlayerDectionArea" index="0"]
+position = Vector2(201, 32)
+
+[node name="CollisionShape2D" parent="Checkpoints/Checkpoint3/CheckpointPlayerArea" index="0"]
+position = Vector2(201, 32)
+
+[node name="Checkpoint4" parent="Checkpoints" index="3" instance=ExtResource("3_ani88")]
+position = Vector2(416, -1)
+
+[node name="IgorBoss" parent="Checkpoints/Checkpoint4/Enemies" index="0" instance=ExtResource("5_c8tl5")]
+position = Vector2(229, 45)
+max_health = 100
+
+[node name="CollisionShape2D" parent="Checkpoints/Checkpoint4/PlayerDectionArea" index="0"]
+position = Vector2(201, 32)
+
+[node name="CollisionShape2D" parent="Checkpoints/Checkpoint4/CheckpointPlayerArea" index="0"]
+position = Vector2(201, 32)
+
+[node name="Checkpoint5" parent="Checkpoints" index="4" instance=ExtResource("3_ani88")]
+position = Vector2(524, -2)
+
+[node name="CollisionShape2D" parent="Checkpoints/Checkpoint5/PlayerDectionArea" index="0"]
+position = Vector2(201, 32)
+
+[node name="CollisionShape2D" parent="Checkpoints/Checkpoint5/CheckpointPlayerArea" index="0"]
+position = Vector2(201, 32)
+
+[node name="Containers" type="Node2D" parent="." index="3"]
+
+[node name="Melon" parent="Containers" index="0" instance=ExtResource("5_4fdwm")]
+position = Vector2(170, 37)
+
+[node name="Melon2" parent="Containers" index="1" instance=ExtResource("5_4fdwm")]
+position = Vector2(369, 18)
+
+[node name="Melon3" parent="Containers" index="2" instance=ExtResource("5_4fdwm")]
+position = Vector2(578, 21)
+
+[node name="Melon4" parent="Containers" index="3" instance=ExtResource("5_4fdwm")]
+position = Vector2(605, 21)
+
+[node name="Melon5" parent="Containers" index="4" instance=ExtResource("5_4fdwm")]
+position = Vector2(656, 21)
+
+[editable path="Checkpoints/Checkpoint"]
+[editable path="Checkpoints/Checkpoint2"]
+[editable path="Checkpoints/Checkpoint3"]
+[editable path="Checkpoints/Checkpoint4"]
+[editable path="Checkpoints/Checkpoint5"]

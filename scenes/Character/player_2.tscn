@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://na3el8avugte"]
+
+[ext_resource type="PackedScene" uid="uid://c5k7fya6e5hxt" path="res://scenes/Character/player.tscn" id="1_npd6y"]
+[ext_resource type="Texture2D" uid="uid://cqqgnt7jf5og8" path="res://assets/player2.png" id="2_dijaw"]
+
+[node name="Player2" instance=ExtResource("1_npd6y")]
+
+[node name="CharacterSprite" parent="." index="1"]
+texture = ExtResource("2_dijaw")
+
+[editable path="DamageEmitter"]
+[editable path="DamageReceiver"]
+[editable path="CollateralDamageEmitter"]

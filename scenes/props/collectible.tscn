@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b68ghnlormga8"]
+
+[ext_resource type="Texture2D" uid="uid://bvnma2lxkbrgs" path="res://assets/prop-shadow.png" id="1_4mhas"]
+[ext_resource type="Script" uid="uid://dibxp0i8qjp54" path="res://scenes/props/collectible.gd" id="1_od5py"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_my6fd"]
+
+[node name="Collectible" type="Area2D"]
+collision_layer = 256
+collision_mask = 2
+monitoring = false
+monitorable = false
+script = ExtResource("1_od5py")
+knockdown_intensity = 120.0
+speed = 100.0
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_4mhas")
+
+[node name="CollectibleSprite" type="Sprite2D" parent="."]
+centered = false
+offset = Vector2(-8, -8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_my6fd")
