@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckavqb25bdaul"]
+
+[ext_resource type="PackedScene" uid="uid://cm0f6btgshdbx" path="res://scenes/stages/stage_01_streets.tscn" id="1_036b0"]
+[ext_resource type="Script" uid="uid://d0nhl0c06ortq" path="res://world.gd" id="1_dwbse"]
+[ext_resource type="Script" uid="uid://tujkfvh78eta" path="res://scenes/stages/actors_container.gd" id="2_036b0"]
+[ext_resource type="PackedScene" uid="uid://dhlyydkwjppjc" path="res://scenes/ui/ui.tscn" id="2_dwbse"]
+[ext_resource type="PackedScene" uid="uid://c5k7fya6e5hxt" path="res://scenes/Character/player.tscn" id="2_fj7yv"]
+[ext_resource type="Script" uid="uid://btk1ihv08g7v4" path="res://scenes/stages/camera.gd" id="4_dwbse"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqk2v"]
+size = Vector2(6, 64)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_dwbse")
+
+[node name="UI" parent="." instance=ExtResource("2_dwbse")]
+process_mode = 3
+
+[node name="Stage-01-Streets" parent="." instance=ExtResource("1_036b0")]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(50, 32)
+script = ExtResource("4_dwbse")
+duration_shake = 50
+shake_intensity = 1
+
+[node name="InvisibleWalls" type="Node2D" parent="Camera"]
+position = Vector2(-50, -32)
+
+[node name="LeftWall" type="AnimatableBody2D" parent="Camera/InvisibleWalls"]
+collision_layer = 128
+collision_mask = 0
+sync_to_physics = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/InvisibleWalls/LeftWall"]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_aqk2v")
+
+[node name="RightWall" type="AnimatableBody2D" parent="Camera/InvisibleWalls"]
+collision_layer = 128
+collision_mask = 0
+sync_to_physics = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/InvisibleWalls/RightWall"]
+position = Vector2(100, 33)
+shape = SubResource("RectangleShape2D_aqk2v")
+
+[node name="ActorsContainer" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+y_sort_enabled = true
+script = ExtResource("2_036b0")
+player = NodePath("Player")
+
+[node name="Player" parent="ActorsContainer" instance=ExtResource("2_fj7yv")]
+position = Vector2(46, 45)
+
+[editable path="UI"]
+[editable path="UI/UIContainer/EnemyHealthbar"]
