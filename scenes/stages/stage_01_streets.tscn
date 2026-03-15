@@ -95,22 +95,13 @@ position = Vector2(201, 32)
 position = Vector2(416, -1)
 
 [node name="IgorBoss" parent="Checkpoints/Checkpoint4/Enemies" index="0" instance=ExtResource("5_c8tl5")]
-position = Vector2(229, 45)
+position = Vector2(229, -7)
 max_health = 100
 
 [node name="CollisionShape2D" parent="Checkpoints/Checkpoint4/PlayerDectionArea" index="0"]
 position = Vector2(201, 32)
 
 [node name="CollisionShape2D" parent="Checkpoints/Checkpoint4/CheckpointPlayerArea" index="0"]
-position = Vector2(201, 32)
-
-[node name="Checkpoint5" parent="Checkpoints" index="4" instance=ExtResource("3_ani88")]
-position = Vector2(524, -2)
-
-[node name="CollisionShape2D" parent="Checkpoints/Checkpoint5/PlayerDectionArea" index="0"]
-position = Vector2(201, 32)
-
-[node name="CollisionShape2D" parent="Checkpoints/Checkpoint5/CheckpointPlayerArea" index="0"]
 position = Vector2(201, 32)
 
 [node name="Containers" type="Node2D" parent="." index="3"]
@@ -134,4 +125,3 @@ position = Vector2(656, 21)
 [editable path="Checkpoints/Checkpoint2"]
 [editable path="Checkpoints/Checkpoint3"]
 [editable path="Checkpoints/Checkpoint4"]
-[editable path="Checkpoints/Checkpoint5"]
