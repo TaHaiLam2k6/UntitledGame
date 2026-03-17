@@ -51,7 +51,7 @@ script = ExtResource("2_036b0")
 player = NodePath("Player")
 
 [node name="Player" parent="ActorsContainer" instance=ExtResource("2_fj7yv")]
-position = Vector2(46, 45)
+position = Vector2(47, 44)
 
 [editable path="UI"]
 [editable path="UI/UIContainer/EnemyHealthbar"]
